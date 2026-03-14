@@ -39,7 +39,7 @@ ORF_Detector/
     ├── dna_to_protein.py       # Translation (1-letter & 3-letter formats)
     ├── dna_to_rna.py           # Transcription logic
     ├── fasta_to_dna.py         # Sequence extraction & multi-FASTA mapping
-    ├── main.py                 # The central execution orchestrator
+    ├── main.py                 # Main execution point
     ├── results_export.py       # Structured report generation
     └── sequence_properties.py  # Biochemical property calculations (Mass, pI, Tm, etc.)
 ```
