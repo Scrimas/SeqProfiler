@@ -46,17 +46,23 @@ ORF_Detector/
 
 ## Usage
 
-1. **Prepare Data:** Place your target `.fasta` files into the `data/` directory.
+1. **Clone repository**
+
+```bash
+git clone https://github.com/Scrimas/ORF_Detector
+```
+
+2. **Prepare Data:** Place your target `.fasta` files into the `data/` directory.
     
-2. **Run Pipeline:** Execute the main script from the root directory:
+3. **Run Pipeline:** Execute the main script from the root directory:
 
 ```bash
 python src/main.py
 ```
 
-3. **Configure:** Enter your desired minimum ORF size in amino acids (defaults to 50) when prompted.
+4. **Configure:** Enter your desired minimum ORF size in amino acids (defaults to 50) when prompted.
 
-4. **Review:** Retrieve detailed analysis reports in the `results/` folder.
+5. **Review:** Retrieve detailed analysis reports in the `results/` folder.
 
 
 ## License
