@@ -4,7 +4,7 @@
 
 ## Project Status
 
-**Completed / Pedagogical.** This repository was created as a foundational learning exercise and portfolio piece. It is fully functional for its intended purpose, but it may or may not receive active updates or maintenance in the future.
+**Completed / Open to updates:** This repository was created as a foundational learning exercise and portfolio piece. It is fully functional for its intended purpose and may not receive regular maintenance, though I am currently considering adding a Graphical User Interface (GUI) as a future update.
 
 ## The "Vanilla Python" Philosophy
 
