@@ -15,11 +15,14 @@ def export_orfs_to_txt(orfs_list, output_file_path):
             text_block = f"""--- ORF {i} ---
 Original Sequence: {seq_id}
 Strand: {strand}
-Position (+ reference): Nucleotides {start} to {end}
+Position (Forward reference): Nucleotides {start} to {end}
 Length: {aa_length} amino acids
-RNA Sequence        : {rna}
-Sequence (3-letter) : {prot_3l}
-Sequence (1-letter) : {prot_1l}
+RNA Sequence:
+{rna}
+Sequence (3-letter):
+{prot_3l}
+Sequence (1-letter):
+{prot_1l}
 
 """
             f.write(text_block)

@@ -36,7 +36,7 @@ if __name__ == "__main__":
                 positive_orfs = get_orfs(main_sequence, min_length_aa=min_length)
                 for orf in positive_orfs:
                     orf["sequence_id"] = seq_id
-                    orf["strand"] = "+"
+                    orf["strand"] = "Forward"
                     p3, p1 = translate_sequence(orf["sequence"])
                     orf["protein_3l"] = p3
                     orf["protein_1l"] = p1
@@ -45,7 +45,7 @@ if __name__ == "__main__":
                 negative_orfs = get_orfs(reverse_complement, min_length_aa=min_length)
                 for orf in negative_orfs:
                     orf["sequence_id"] = seq_id
-                    orf["strand"] = "-"
+                    orf["strand"] = "Reverse"
                     p3, p1 = translate_sequence(orf["sequence"])
                     orf["protein_3l"] = p3
                     orf["protein_1l"] = p1
