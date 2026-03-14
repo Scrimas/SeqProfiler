@@ -21,14 +21,14 @@ Position (Forward reference): Nucleotides {start} to {end}
 
 [ DNA Properties ]
 - Length: {dna_props.get("length", 0)} bp
-- Mass: {dna_props.get("mass_da", 0):.2f} Da
+- Molecular Weight: {dna_props.get("mass_da", 0):.2f} Da
 - GC Content: {dna_props.get("gc_prop", 0):.2f} %
 - AT Content: {dna_props.get("at_prop", 0):.2f} %
 - Melting Point (Tm): {dna_props.get("tm", 0):.2f} °C
 
 [ RNA Properties ]
 - Length: {rna_props.get("length", 0)} nt
-- Mass: {rna_props.get("mass_da", 0):.2f} Da
+- Molecular Weight: {rna_props.get("mass_da", 0):.2f} Da
 RNA Sequence:
 {rna}
 
