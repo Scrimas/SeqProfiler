@@ -23,7 +23,7 @@ AUGGCCCUGUGGAUGCGCCUCCUGCCCCUGCUGGCGCUGCUGGCCCUCUGGGGACCUGACCCAGCCGCAGCCUUUGUGAA
 [ Protein Properties ]
 - Length: 110 amino acids
 - Molecular Weight: 11.98 kDa
-- Theorical Isoelectric Point (pI): 5.04
+- Theoretical Isoelectric Point (pI): 5.04
 - Extinction Coefficient (280nm): 17710 M⁻¹ cm⁻¹
 
 Sequence (3-letter):
@@ -52,7 +52,7 @@ AUGCUGGUACAGCAUUGUUCCACAAUGCCACGCUUCUGCAGGGACCCCUCCAGGGCCAAGGGCUGCAGGCUGCCUGCACC
 [ Protein Properties ]
 - Length: 49 amino acids
 - Molecular Weight: 5.26 kDa
-- Theorical Isoelectric Point (pI): 11.08
+- Theoretical Isoelectric Point (pI): 11.08
 - Extinction Coefficient (280nm): 625 M⁻¹ cm⁻¹
 
 Sequence (3-letter):
@@ -81,7 +81,7 @@ AUGGUGCAUCUGACUCCUGAGGAGAAGUCUGCCGUUACUGCCCUGUGGGGCAAGGUGAACGUGGAUGAAGUUGGUGGUGA
 [ Protein Properties ]
 - Length: 147 amino acids
 - Molecular Weight: 16.00 kDa
-- Theorical Isoelectric Point (pI): 6.87
+- Theoretical Isoelectric Point (pI): 6.87
 - Extinction Coefficient (280nm): 15720 M⁻¹ cm⁻¹
 
 Sequence (3-letter):

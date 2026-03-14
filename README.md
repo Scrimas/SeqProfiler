@@ -1,6 +1,6 @@
 ## Overview
 
-**ORF_Detector** is a purely foundational, from-scratch bioinformatics tool written in Python. It parses standard FASTA files, identifies valid Open Reading Frames (ORFs), transcribes DNA into mRNA, and translates sequences into both 3-letter and 1-letter amino acid structures.
+**ORF_Detector** is a purely foundational, from-scratch bioinformatics tool written in Python. It parses standard FASTA files, identifies valid Open Reading Frames (ORFs), transcribes DNA into mRNA, translates sequences into amino acids, and calculates key biochemical properties (Mass, Tm, pI, Extinction Coefficient) for all identified molecules.
 
 ## Project Status
 
@@ -8,9 +8,9 @@
 
 ## The "Vanilla Python" Philosophy
 
-If you are reviewing this code, you might wonder why I manually hardcoded a 64-codon dictionary or built custom string-slicing loops to map reading frames instead of simply importing `Bio.Seq` from Biopython.
+If you are reviewing this code, you might wonder why I manually hardcoded a 64-codon dictionary, built custom string-slicing loops, or wrote binary search algorithms to calculate isoelectric points instead of simply importing `Bio.Seq` from Biopython.
 
-**This is an intentional and pedagogical constraint.** As a 3rd-year biology student in Grenoble, my goal was to deeply understand and computationally replicate the mechanical logic of the ribosomal machinery. Relying on "black box" libraries would defeat the purpose of the exercise. Every algorithmic choice (from the step-of-3 indexing to the reverse-complement strand mathematics) was written explicitly to prove a granular understanding of genomic translation.
+**This is an intentional and pedagogical constraint.** As a 3rd-year biology student in Grenoble, my goal was to deeply understand and computationally replicate the mechanical logic of the ribosomal machinery and the mathematics behind biochemical properties. Relying on "black box" libraries would defeat the purpose of the exercise. Every algorithmic choice was written explicitly to prove a granular understanding of genomic translation and molecular biophysics.
 
 ## Core Features
 
@@ -20,9 +20,11 @@ If you are reviewing this code, you might wonder why I manually hardcoded a 64-c
 
 - **Intelligent Redundancy Filtering:** Utilizes a heuristic `used_stops` tracking system to prioritize the longest functional reading frame and prevent reporting smaller, nested ORFs.
 
+- **Biochemical Profiling:** Calculates physical and chemical properties for all sequences from scratch. This includes DNA/RNA exact mass, sequence GC/AT content, melting temperature (Tm), and protein molecular weight (kDa), theoretical isoelectric point (pI), and extinction coefficient.
+
 - **Bi-Directional Coordinate Mapping:** Accurately maps the 1-based start/end coordinates of reverse-complement ORFs back to the original forward strand reference.
 
-- **Batch Processing:** Automatically processes all `.fasta` files in the `/data` directory and exports structured reports to `/results`.
+- **Batch Processing:** Automatically processes all `.fasta` files in the `/data` directory and exports structured, detailed reports to `/results`.
 
 ## Architecture
 
@@ -30,15 +32,16 @@ The directory structure intentionally mirrors the biological flow of information
 
 ```text
 ORF_Detector/
-├── data/                  # Input .fasta files
-├── results/               # Output text reports
+├── data/                       # Input .fasta files
+├── results/                    # Output text reports
 └── src/
-    ├── fasta_to_dna.py    # Sequence extraction & multi-FASTA mapping
-    ├── dna_to_codon.py    # Frame reading & Start/Stop identification
-    ├── dna_to_rna.py      # Transcription logic
-    ├── dna_to_protein.py  # Translation (1-letter & 3-letter formats)
-    ├── results_export.py  # Structured report generation
-    └── main.py            # The central execution orchestrator
+    ├── dna_to_codon.py         # Frame reading & Start/Stop identification
+    ├── dna_to_protein.py       # Translation (1-letter & 3-letter formats)
+    ├── dna_to_rna.py           # Transcription logic
+    ├── fasta_to_dna.py         # Sequence extraction & multi-FASTA mapping
+    ├── main.py                 # The central execution orchestrator
+    ├── results_export.py       # Structured report generation
+    └── sequence_properties.py  # Biochemical property calculations (Mass, pI, Tm, etc.)
 ```
 
 ## Usage
