@@ -4,7 +4,7 @@
 
 ## Project Status
 
-**Completed / Open to updates:** This repository was created as a foundational learning exercise and portfolio piece. It is fully functional for its intended purpose and may not receive regular maintenance, though I am currently considering adding a Graphical User Interface (GUI) as a future update.
+**Completed / Open to updates:** This repository was created as a foundational learning exercise and portfolio piece. While it is fully functional as a command-line tool and is not under strict active maintenance, a potential future update I am exploring is wrapping the pipeline in a Graphical User Interface (GUI).
 
 ## The "Vanilla Python" Philosophy
 
