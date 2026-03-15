@@ -9,7 +9,7 @@ from sequence_properties import calculate_dna_properties, calculate_rna_properti
 base_path = Path(__file__).resolve().parent.parent
 
 if __name__ == "__main__":
-    print("=== ORF DETECTOR (BATCH MODE) ===\n")
+    print("=== SeqProfiler (BATCH MODE) ===\n")
     user_input = input("Enter minimum ORF size (in amino acids) [default: 50]: ").strip()
     min_length = int(user_input) if user_input else 50
     print("-" * 44)
