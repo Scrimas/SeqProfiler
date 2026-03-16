@@ -1,3 +1,7 @@
+<h1 align="center">
+  SeqProfiler
+</h1>
+
 ## Overview
 
 **SeqProfiler** is a purely foundational, from-scratch bioinformatics tool written in Python. It parses standard FASTA files, identifies valid Open Reading Frames (ORFs), transcribes DNA into mRNA, translates sequences into amino acids, and calculates key biochemical properties (Mass, Tm, pI, Extinction Coefficient) for all identified molecules.
