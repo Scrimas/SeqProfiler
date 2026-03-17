@@ -65,7 +65,7 @@ python src/main.py
 
 ```bash
 # Specifying custom settings
-python src/main.py --min-length 100 --input ./my_data --output ./my_results
+python src/main.py --min-length 100 --input ./data_folder --output ./results_folder
 ```
 
 3. **Review:** Retrieve detailed analysis reports in your specified output folder (defaults to `results/`).
