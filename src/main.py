@@ -1,3 +1,4 @@
+import argparse
 from pathlib import Path
 from dna_to_rna import dna_to_rna
 from fasta_to_dna import fasta_to_dna
@@ -9,12 +10,34 @@ from sequence_properties import calculate_dna_properties, calculate_rna_properti
 base_path = Path(__file__).resolve().parent.parent
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="SeqProfiler: DNA analysis tool.")
+    parser.add_argument("--min-length", type=int, default=None, help="Minimum ORF size (in amino acids) [default: 50]")
+    parser.add_argument("--input", type=str, default=None, help="Path to input directory containing .fasta files [default: data/]")
+    parser.add_argument("--output", type=str, default=None, help="Path to output directory for results [default: results/]")
+    args = parser.parse_args()
+
     print("=== SeqProfiler (BATCH MODE) ===\n")
-    user_input = input("Enter minimum ORF size (in amino acids) [default: 50]: ").strip()
-    min_length = int(user_input) if user_input else 50
+    
+    if args.min_length is None:
+        min_length = 50
+        print(f"No minimum size specified. Using default: {min_length}")
+    else:
+        min_length = args.min_length
+        print(f"Minimum ORF size: {min_length}")
+
+    data_dir = Path(args.input).resolve() if args.input else base_path / "data"
+    results_dir = Path(args.output).resolve() if args.output else base_path / "results"
+    
+    print(f"Input directory: {data_dir}")
+    print(f"Output directory: {results_dir}")
     print("-" * 44)
-    data_dir = base_path / "data"
-    results_dir = base_path / "results"
+
+    if not data_dir.exists():
+        print(f"Error: Input directory '{data_dir}' does not exist.")
+        exit(1)
+    
+    results_dir.mkdir(parents=True, exist_ok=True)
+    
     fasta_files = list(data_dir.glob("*.fasta"))
     
     if not fasta_files:
