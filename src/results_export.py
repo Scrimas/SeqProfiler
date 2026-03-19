@@ -1,48 +1,38 @@
-def export_orfs_to_txt(orfs_list, output_file_path):
-    with open(output_file_path, 'w', encoding='utf-8') as f:
-        f.write("=== ANALYSIS REPORT: ORF DETECTION ===\n")
-        f.write(f"Total valid ORFs found: {len(orfs_list)}\n")
-        f.write("=" * 38 + "\n\n")
-        for i, orf in enumerate(orfs_list, start=1):
-            seq_id = orf.get("sequence_id", "Unknown")
-            strand = orf.get("strand", "Unspecified")
-            start = orf.get("start_position", "Unknown")
-            end = orf.get("end_position", "Unknown")
-            dna_props = orf.get("dna_props", {})
-            rna_props = orf.get("rna_props", {})
-            prot_props = orf.get("prot_props", {})
-            prot_3l = orf.get("protein_3l", "Untranslated")
-            prot_1l = orf.get("protein_1l", "Untranslated")
-            rna = orf.get("rna", "Untranscribed")
-            text_block = f"""--- ORF {i} ---
-Original Sequence: {seq_id}
-Strand: {strand}
-Position (Forward reference): Nucleotides {start} to {end}
+from typing import List, Dict
 
-[ DNA Properties ]
-- Length: {dna_props.get("length", 0)} bp
-- Molecular Weight: {dna_props.get("mass_da", 0):.2f} Da
-- GC Content: {dna_props.get("gc_prop", 0):.2f} %
-- AT Content: {dna_props.get("at_prop", 0):.2f} %
-- Melting Point (Tm): {dna_props.get("tm", 0):.2f} °C
+def export_orfs_to_txt(orfs: List[Dict], output_file: str) -> None:
+    """
+    Exports ORF analysis results to a structured text file.
+    
+    Args:
+        orfs (List[Dict]): List of ORF data dictionaries.
+        output_file (str): Path to the output file.
+    """
+    with open(output_file, 'w') as f:
+        f.write("=" * 60 + "\n")
+        f.write("SeqProfiler: ORF Analysis Report\n")
+        f.write("=" * 60 + "\n\n")
+        
+        if not orfs:
+            f.write("No ORFs found matching the criteria.\n")
+            return
 
-[ RNA Properties ]
-- Length: {rna_props.get("length", 0)} nt
-- Molecular Weight: {rna_props.get("mass_da", 0):.2f} Da
-RNA Sequence:
-{rna}
-
-[ Protein Properties ]
-- Length: {len(prot_1l) if prot_1l != "Untranslated" else 0} amino acids
-- Molecular Weight: {prot_props.get("mass_kda", 0):.2f} kDa
-- Theoretical Isoelectric Point (pI): {prot_props.get("pi", 0):.2f}
-- Extinction Coefficient (280nm): {prot_props.get("ext_coeff", 0)} M⁻¹ cm⁻¹
-
-Sequence (3-letter):
-{prot_3l}
-Sequence (1-letter):
-{prot_1l}
-
-"""
-            f.write(text_block)
-    print(f"Saved: {output_file_path.name}")
+        for orf in orfs:
+            f.write(f"> Sequence ID: {orf['sequence_id']}\n")
+            f.write(f"Strand: {orf['strand']}\n")
+            f.write(f"Position: {orf['start_position']} - {orf['end_position']} (bp)\n")
+            f.write("-" * 40 + "\n")
+            
+            # DNA Properties
+            dp = orf['dna_props']
+            f.write(f"[DNA]  Length: {dp['length']} bp | Mass: {dp['mass_da']:.2f} Da | GC: {dp['gc_prop']:.1f}% | Tm: {dp['tm']:.1f} °C\n")
+            
+            # RNA Properties
+            rp = orf['rna_props']
+            f.write(f"[RNA]  Mass: {rp['mass_da']:.2f} Da\n")
+            
+            # Protein Properties & Sequence
+            pp = orf['prot_props']
+            f.write(f"[PROT] Length: {len(orf['protein_1l'])} aa | Mass: {pp['mass_kda']:.2f} kDa | pI: {pp['pi']:.2f} | Ext. Coeff: {pp['ext_coeff']}\n")
+            f.write(f"\n[PROTEIN SEQUENCE (1L)]\n{orf['protein_1l']}\n")
+            f.write("\n" + "." * 60 + "\n\n")

@@ -1,23 +1,42 @@
-def get_orfs(dna_sequence, min_length_aa=50):
+from typing import List, Dict, Set
+
+def get_orfs(dna_sequence: str, min_length_aa: int = 50) -> List[Dict]:
+    """
+    Identifies Open Reading Frames (ORFs) in a DNA sequence.
+    
+    Optimized to find non-redundant ORFs (longest frame per stop codon) and uses 
+    frame-based scanning for better efficiency.
+
+    Args:
+        dna_sequence (str): The DNA sequence to scan.
+        min_length_aa (int): Minimum length of the ORF in amino acids.
+
+    Returns:
+        List[Dict]: A list of dictionaries containing start, end, and sequence of each ORF.
+    """
     found_orfs = []
     seq_len = len(dna_sequence)
-    stop_codons = ["TAA", "TAG", "TGA"]
-    used_stops = set()
-    for i in range(seq_len - 2):
-        current_codon = dna_sequence[i:i+3]
-        if current_codon == "ATG":
-            for j in range(i, seq_len - 2, 3):
-                reading_codon = dna_sequence[j:j+3]
-                if reading_codon in stop_codons:
-                    end_pos = j + 3
-                    if end_pos not in used_stops:
-                        orf_sequence = dna_sequence[i:end_pos]
-                        if len(orf_sequence) >= (min_length_aa * 3):
-                            found_orfs.append({
-                                "start_position": i + 1,
-                                "end_position": end_pos,
-                                "sequence": orf_sequence
-                            })
-                            used_stops.add(end_pos)
-                    break
+    stop_codons = {"TAA", "TAG", "TGA"}
+    used_stops: Set[int] = set()
+    
+    for frame in range(3):
+        for i in range(frame, seq_len - 2, 3):
+            current_codon = dna_sequence[i:i+3]
+            if current_codon == "ATG":
+                for j in range(i, seq_len - 2, 3):
+                    reading_codon = dna_sequence[j:j+3]
+                    if reading_codon in stop_codons:
+                        end_pos = j + 3
+                        # Filtering heuristic: only keep the longest ORF for a given stop
+                        # This should prevents reporting nested, smaller ORFs within the same frame
+                        if end_pos not in used_stops:
+                            orf_sequence = dna_sequence[i:end_pos]
+                            if len(orf_sequence) >= (min_length_aa * 3):
+                                found_orfs.append({
+                                    "start_position": i + 1,
+                                    "end_position": end_pos,
+                                    "sequence": orf_sequence
+                                })
+                                used_stops.add(end_pos)
+                        break # Move to next search after finding a stop
     return found_orfs

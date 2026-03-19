@@ -1,91 +1,43 @@
-=== ANALYSIS REPORT: ORF DETECTION ===
-Total valid ORFs found: 3
-======================================
+============================================================
+SeqProfiler: ORF Analysis Report
+============================================================
 
---- ORF 1 ---
-Original Sequence: NM_000207.3 Homo sapiens insulin (INS), transcript variant 1, mRNA
+> Sequence ID: NM_000207.3
 Strand: Forward
-Position (Forward reference): Nucleotides 239 to 571
+Position: 239 - 571 (bp)
+----------------------------------------
+[DNA]  Length: 333 bp | Mass: 102884.18 Da | GC: 64.6% | Tm: 89.4 �C
+[RNA]  Mass: 107355.13 Da
+[PROT] Length: 110 aa | Mass: 11.98 kDa | pI: 5.04 | Ext. Coeff: 17710
 
-[ DNA Properties ]
-- Length: 333 bp
-- Molecular Weight: 102884.18 Da
-- GC Content: 64.56 %
-- AT Content: 35.44 %
-- Melting Point (Tm): 89.35 °C
-
-[ RNA Properties ]
-- Length: 333 nt
-- Molecular Weight: 107355.13 Da
-RNA Sequence:
-AUGGCCCUGUGGAUGCGCCUCCUGCCCCUGCUGGCGCUGCUGGCCCUCUGGGGACCUGACCCAGCCGCAGCCUUUGUGAACCAACACCUGUGCGGCUCACACCUGGUGGAAGCUCUCUACCUAGUGUGCGGGGAACGAGGCUUCUUCUACACACCCAAGACCCGCCGGGAGGCAGAGGACCUGCAGGUGGGGCAGGUGGAGCUGGGCGGGGGCCCUGGUGCAGGCAGCCUGCAGCCCUUGGCCCUGGAGGGGUCCCUGCAGAAGCGUGGCAUUGUGGAACAAUGCUGUACCAGCAUCUGCUCCCUCUACCAGCUGGAGAACUACUGCAACUAG
-
-[ Protein Properties ]
-- Length: 110 amino acids
-- Molecular Weight: 11.98 kDa
-- Theoretical Isoelectric Point (pI): 5.04
-- Extinction Coefficient (280nm): 17710 M⁻¹ cm⁻¹
-
-Sequence (3-letter):
-MetAlaLeuTrpMetArgLeuLeuProLeuLeuAlaLeuLeuAlaLeuTrpGlyProAspProAlaAlaAlaPheValAsnGlnHisLeuCysGlySerHisLeuValGluAlaLeuTyrLeuValCysGlyGluArgGlyPhePheTyrThrProLysThrArgArgGluAlaGluAspLeuGlnValGlyGlnValGluLeuGlyGlyGlyProGlyAlaGlySerLeuGlnProLeuAlaLeuGluGlySerLeuGlnLysArgGlyIleValGluGlnCysCysThrSerIleCysSerLeuTyrGlnLeuGluAsnTyrCysAsn
-Sequence (1-letter):
+[PROTEIN SEQUENCE (1L)]
 MALWMRLLPLLALLALWGPDPAAAFVNQHLCGSHLVEALYLVCGERGFFYTPKTRREAEDLQVGQVELGGGPGAGSLQPLALEGSLQKRGIVEQCCTSICSLYQLENYCN
 
---- ORF 2 ---
-Original Sequence: NM_000207.3 Homo sapiens insulin (INS), transcript variant 1, mRNA
+............................................................
+
+> Sequence ID: NM_000207.3
 Strand: Reverse
-Position (Forward reference): Nucleotides 385 to 534
+Position: 385 - 534 (bp)
+----------------------------------------
+[DNA]  Length: 150 bp | Mass: 45961.52 Da | GC: 67.3% | Tm: 88.0 �C
+[RNA]  Mass: 47968.12 Da
+[PROT] Length: 49 aa | Mass: 5.26 kDa | pI: 11.08 | Ext. Coeff: 625
 
-[ DNA Properties ]
-- Length: 150 bp
-- Molecular Weight: 45961.52 Da
-- GC Content: 67.33 %
-- AT Content: 32.67 %
-- Melting Point (Tm): 88.02 °C
-
-[ RNA Properties ]
-- Length: 150 nt
-- Molecular Weight: 47968.12 Da
-RNA Sequence:
-AUGCUGGUACAGCAUUGUUCCACAAUGCCACGCUUCUGCAGGGACCCCUCCAGGGCCAAGGGCUGCAGGCUGCCUGCACCAGGGCCCCCGCCCAGCUCCACCUGCCCCACCUGCAGGUCCUCUGCCUCCCGGCGGGUCUUGGGUGUGUAG
-
-[ Protein Properties ]
-- Length: 49 amino acids
-- Molecular Weight: 5.26 kDa
-- Theoretical Isoelectric Point (pI): 11.08
-- Extinction Coefficient (280nm): 625 M⁻¹ cm⁻¹
-
-Sequence (3-letter):
-MetLeuValGlnHisCysSerThrMetProArgPheCysArgAspProSerArgAlaLysGlyCysArgLeuProAlaProGlyProProProSerSerThrCysProThrCysArgSerSerAlaSerArgArgValLeuGlyVal
-Sequence (1-letter):
+[PROTEIN SEQUENCE (1L)]
 MLVQHCSTMPRFCRDPSRAKGCRLPAPGPPPSSTCPTCRSSASRRVLGV
 
---- ORF 3 ---
-Original Sequence: NM_000518.5 Homo sapiens hemoglobin subunit beta (HBB), mRNA
+............................................................
+
+> Sequence ID: NM_000518.5
 Strand: Forward
-Position (Forward reference): Nucleotides 51 to 494
+Position: 51 - 494 (bp)
+----------------------------------------
+[DNA]  Length: 444 bp | Mass: 137499.82 Da | GC: 56.1% | Tm: 86.4 �C
+[RNA]  Mass: 143100.47 Da
+[PROT] Length: 147 aa | Mass: 16.00 kDa | pI: 6.87 | Ext. Coeff: 15720
 
-[ DNA Properties ]
-- Length: 444 bp
-- Molecular Weight: 137499.82 Da
-- GC Content: 56.08 %
-- AT Content: 43.92 %
-- Melting Point (Tm): 86.38 °C
-
-[ RNA Properties ]
-- Length: 444 nt
-- Molecular Weight: 143100.47 Da
-RNA Sequence:
-AUGGUGCAUCUGACUCCUGAGGAGAAGUCUGCCGUUACUGCCCUGUGGGGCAAGGUGAACGUGGAUGAAGUUGGUGGUGAGGCCCUGGGCAGGCUGCUGGUGGUCUACCCUUGGACCCAGAGGUUCUUUGAGUCCUUUGGGGAUCUGUCCACUCCUGAUGCUGUUAUGGGCAACCCUAAGGUGAAGGCUCAUGGCAAGAAAGUGCUCGGUGCCUUUAGUGAUGGCCUGGCUCACCUGGACAACCUCAAGGGCACCUUUGCCACACUGAGUGAGCUGCACUGUGACAAGCUGCACGUGGAUCCUGAGAACUUCAGGCUCCUGGGCAACGUGCUGGUCUGUGUGCUGGCCCAUCACUUUGGCAAAGAAUUCACCCCACCAGUGCAGGCUGCCUAUCAGAAAGUGGUGGCUGGUGUGGCUAAUGCCCUGGCCCACAAGUAUCACUAA
-
-[ Protein Properties ]
-- Length: 147 amino acids
-- Molecular Weight: 16.00 kDa
-- Theoretical Isoelectric Point (pI): 6.87
-- Extinction Coefficient (280nm): 15720 M⁻¹ cm⁻¹
-
-Sequence (3-letter):
-MetValHisLeuThrProGluGluLysSerAlaValThrAlaLeuTrpGlyLysValAsnValAspGluValGlyGlyGluAlaLeuGlyArgLeuLeuValValTyrProTrpThrGlnArgPhePheGluSerPheGlyAspLeuSerThrProAspAlaValMetGlyAsnProLysValLysAlaHisGlyLysLysValLeuGlyAlaPheSerAspGlyLeuAlaHisLeuAspAsnLeuLysGlyThrPheAlaThrLeuSerGluLeuHisCysAspLysLeuHisValAspProGluAsnPheArgLeuLeuGlyAsnValLeuValCysValLeuAlaHisHisPheGlyLysGluPheThrProProValGlnAlaAlaTyrGlnLysValValAlaGlyValAlaAsnAlaLeuAlaHisLysTyrHis
-Sequence (1-letter):
+[PROTEIN SEQUENCE (1L)]
 MVHLTPEEKSAVTALWGKVNVDEVGGEALGRLLVVYPWTQRFFESFGDLSTPDAVMGNPKVKAHGKKVLGAFSDGLAHLDNLKGTFATLSELHCDKLHVDPENFRLLGNVLVCVLAHHFGKEFTPPVQAAYQKVVAGVANALAHKYH
+
+............................................................
 

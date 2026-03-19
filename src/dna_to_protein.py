@@ -1,4 +1,6 @@
-genetic_code = {
+from typing import Tuple
+
+GENETIC_CODE = {
     "AAA": "Lys", "AAT": "Asn", "AAG": "Lys", "AAC": "Asn",
     "ATA": "Ile", "ATT": "Ile", "ATG": "Met", "ATC": "Ile",
     "AGA": "Arg", "AGT": "Ser", "AGG": "Arg", "AGC": "Ser",
@@ -17,23 +19,46 @@ genetic_code = {
     "CCA": "Pro", "CCT": "Pro", "CCG": "Pro", "CCC": "Pro"
 }
 
-def dna_to_protein(dna_codon):
-    return genetic_code.get(dna_codon, "X")
-
-aa_3_to_1 = {
+AA_3_TO_1 = {
     "Lys": "K", "Asn": "N", "Ile": "I", "Met": "M", "Arg": "R", "Ser": "S",
     "Thr": "T", "Ter": "*", "Tyr": "Y", "Leu": "L", "Phe": "F", "Cys": "C",
     "Trp": "W", "Glu": "E", "Asp": "D", "Val": "V", "Gly": "G", "Ala": "A",
     "Gln": "Q", "His": "H", "Pro": "P", "X": "X"
 }
 
-def translate_sequence(dna_sequence):
-    protein_3l = ""
-    protein_1l = ""
-    for i in range(0, len(dna_sequence) - 3, 3):
+def dna_to_protein(dna_codon: str) -> str:
+    """
+    Translates a single DNA codon into its 3-letter amino acid representation.
+
+    Args:
+        dna_codon (str): A 3-character DNA codon.
+
+    Returns:
+        str: The 3-letter amino acid code (e.g., "Met", "Ser") or "X" if unknown.
+    """
+    return GENETIC_CODE.get(dna_codon.upper(), "X")
+
+def translate_sequence(dna_sequence: str) -> Tuple[str, str]:
+    """
+    Translates a DNA sequence into protein sequences (both 3-letter and 1-letter formats).
+
+    Args:
+        dna_sequence (str): The DNA sequence to translate.
+
+    Returns:
+        Tuple[str, str]: A tuple containing (3-letter protein sequence, 1-letter protein sequence).
+    """
+    protein_3l = []
+    protein_1l = []
+    
+    for i in range(0, len(dna_sequence) - 2, 3):
         codon = dna_sequence[i:i+3]
         aa_3 = dna_to_protein(codon)
-        if aa_3 != "Ter":
-            protein_3l += aa_3
-            protein_1l += aa_3_to_1.get(aa_3, "?") 
-    return protein_3l, protein_1l
+        
+        if aa_3 == "Ter":
+            break
+            
+        protein_3l.append(aa_3)
+        protein_1l.append(AA_3_TO_1.get(aa_3, "?")) 
+        
+    return "".join(protein_3l), "".join(protein_1l)

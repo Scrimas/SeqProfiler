@@ -18,21 +18,15 @@ If you are reviewing this code, you might wonder why I manually hardcoded a 64-c
 
 ## Core Features
 
-- **Custom Multi-FASTA Parsing:** Efficiently handles multi-line sequence concatenation and whitespace stripping without external dependencies.
-
-- **Strict ORF Detection:** Scans both forward (+) and reverse (-) strands for the `ATG` start codon, stepping exactly in-frame (modulo 3) until a stop codon (`TAA`, `TAG`, `TGA`) is reached.
-
-- **Intelligent Redundancy Filtering:** Utilizes a heuristic `used_stops` tracking system to prioritize the longest functional reading frame and prevent reporting smaller, nested ORFs.
-
-- **Biochemical Profiling:** Calculates physical and chemical properties for all sequences from scratch. This includes DNA/RNA exact mass, sequence GC/AT content, melting temperature (Tm), and protein molecular weight (kDa), theoretical isoelectric point (pI), and extinction coefficient.
-
-- **Bi-Directional Coordinate Mapping:** Accurately maps the 1-based start/end coordinates of reverse-complement ORFs back to the original forward strand reference.
-
-- **Batch Processing:** Automatically processes all `.fasta` files in the `/data` directory and exports structured, detailed reports to `/results`.
+- **Batch Sequence Analysis:** Simultaneously processes multiple FASTA files using parallel computing to handle large-scale genomic data efficiently.
+- **Bi-Directional ORF Detection:** Automatically scans both forward and reverse DNA strands to identify all potential protein-coding regions (ORFs).
+- **Automated Transcription & Translation:** Converts identified DNA sequences into mRNA and provides protein translations in both 1-letter and 3-letter formats.
+- **Biochemical Characterization:** Calculates key physical properties including molecular mass, melting temperature (Tm), isoelectric point (pI), and extinction coefficient.
+- **Detailed Reporting:** Generates structured analysis reports for every identified molecule, mapping ORF coordinates back to the original reference sequence.
 
 ## Architecture
 
-The directory structure intentionally mirrors the biological flow of information:
+The directory structure intentionally mirrors the biological flow of information, now enhanced with full type hinting and optimized algorithms:
 
 ```text
 SeqProfiler/
@@ -42,10 +36,10 @@ SeqProfiler/
     ├── dna_to_codon.py         # Frame reading & Start/Stop identification
     ├── dna_to_protein.py       # Translation (1-letter & 3-letter formats)
     ├── dna_to_rna.py           # Transcription logic
-    ├── fasta_to_dna.py         # Sequence extraction & multi-FASTA mapping
+    ├── fasta_to_dna.py         # Sequence extraction & mapping
     ├── main.py                 # Main execution point
     ├── results_export.py       # Structured report generation
-    └── sequence_properties.py  # Biochemical property calculations (Mass, pI, Tm, etc.)
+    └── sequence_properties.py  # Biochemical property calculations
 ```
 
 ## Usage
@@ -59,13 +53,13 @@ git clone https://github.com/Scrimas/SeqProfiler
 2. **Run Pipeline:** Execute the main script from the root directory:
 
 ```bash
-# Using default settings (min-length: 50, input: ./data/, output: ./results/)
+# Using default settings
 python src/main.py
 ```
 
 ```bash
 # Specifying custom settings
-python src/main.py --min-length 100 --input ./data_folder --output ./results_folder
+python src/main.py --min-length 100 --workers 4 --input ./data_folder --output ./results_folder
 ```
 
 3. **Review:** Retrieve detailed analysis reports in your specified output folder (defaults to `results/`).
@@ -77,6 +71,7 @@ python src/main.py --min-length 100 --input ./data_folder --output ./results_fol
 | `--min-length` | Minimum ORF size in amino acids | `50` |
 | `--input` | Path to directory containing `.fasta` files | `data/` |
 | `--output` | Path to directory for analysis reports | `results/` |
+| `--workers` | Number of parallel processes to use | `CPU count` |
 
 ## License
 
