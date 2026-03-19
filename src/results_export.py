@@ -8,7 +8,7 @@ def export_orfs_to_txt(orfs: List[Dict], output_file: str) -> None:
         orfs (List[Dict]): List of ORF data dictionaries.
         output_file (str): Path to the output file.
     """
-    with open(output_file, 'w') as f:
+    with open(output_file, 'w', encoding='utf-8') as f:
         f.write("=" * 60 + "\n")
         f.write("SeqProfiler: ORF Analysis Report\n")
         f.write("=" * 60 + "\n\n")

@@ -18,7 +18,7 @@ def fasta_to_dna(fasta_file: str) -> Dict[str, str]:
     current_id = "Unnamed_Sequence"
     iupac_pattern = re.compile(r'[^ATGCN]') 
     
-    with open(fasta_file, 'r') as f:
+    with open(fasta_file, 'r', encoding='utf-8') as f:
         for line in f:
             line = line.strip()
             if not line:
