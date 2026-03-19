@@ -33,6 +33,6 @@ def export_orfs_to_txt(orfs: List[Dict], output_file: str) -> None:
             
             # Protein Properties & Sequence
             pp = orf['prot_props']
-            f.write(f"[PROT] Length: {len(orf['protein_1l'])} aa | Mass: {pp['mass_kda']:.2f} kDa | pI: {pp['pi']:.2f} | Ext. Coeff: {pp['ext_coeff']}\n")
+            f.write(f"[PROT] Length: {len(orf['protein_1l'])} aa | Mass: {pp['mass_kda']:.2f} kDa | pI: {pp['pi']:.2f} | Ext. Coeff: {pp['ext_coeff']} M⁻¹·cm⁻¹\n")
             f.write(f"\n[PROTEIN SEQUENCE (1L)]\n{orf['protein_1l']}\n")
             f.write("\n" + "." * 60 + "\n\n")
