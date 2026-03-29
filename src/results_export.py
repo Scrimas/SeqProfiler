@@ -47,7 +47,7 @@ def export_orfs_to_txt(orfs: list[dict[str, Any]], output_file: str) -> None:
             
             # Aligned DNA Properties
             dp: dict[str, Any] = orf['dna_props']
-            f.write(f"DNA     Length: {dp['length']} bp  | Mass: {dp['mass_da']:,.0f} Da | GC: {dp['gc_prop']:.1f}% | Tm: {dp['tm']:.1f} °C\n")
+            f.write(f"DNA     Length: {dp['length']} bp  | Mass: {dp['mass_da']:,.0f} Da | AT: {dp['at_prop']:.1f}% | GC: {dp['gc_prop']:.1f}% | Tm: {dp['tm']:.1f} °C\n")
             
             # RNA Properties
             rp: dict[str, Any] = orf['rna_props']

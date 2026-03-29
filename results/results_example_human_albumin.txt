@@ -4,7 +4,7 @@ SeqProfiler: ORF Analysis Report
 
 > NM_000477.7 | Strand: Reverse | Pos: 18 - 230 bp
 ------------------------------------------------------------
-DNA     Length: 213 bp  | Mass: 65,786 Da | GC: 43.7% | Tm: 79.6 °C
+DNA     Length: 213 bp  | Mass: 65,786 Da | AT: 56.3% | GC: 43.7% | Tm: 79.6 °C
 RNA     Mass: 68,519 Da
 Protein Length: 70 aa  | Mass: 7.95 kDa  | pI: 10.66  | Ext.C: 12740 M⁻¹·cm⁻¹
 
@@ -16,7 +16,7 @@ Sequence:
 
 > NM_000477.7 | Strand: Forward | Pos: 42 - 1871 bp
 ------------------------------------------------------------
-DNA     Length: 1830 bp  | Mass: 566,681 Da | GC: 43.0% | Tm: 82.1 °C
+DNA     Length: 1830 bp  | Mass: 566,681 Da | AT: 57.0% | GC: 43.0% | Tm: 82.1 °C
 RNA     Mass: 589,104 Da
 Protein Length: 609 aa  | Mass: 69.37 kDa  | pI: 5.85  | Ext.C: 43685 M⁻¹·cm⁻¹
 
@@ -39,7 +39,7 @@ Sequence:
 
 > NM_000477.7 | Strand: Reverse | Pos: 169 - 513 bp
 ------------------------------------------------------------
-DNA     Length: 345 bp  | Mass: 106,291 Da | GC: 40.6% | Tm: 79.6 °C
+DNA     Length: 345 bp  | Mass: 106,291 Da | AT: 59.4% | GC: 40.6% | Tm: 79.6 °C
 RNA     Mass: 110,280 Da
 Protein Length: 114 aa  | Mass: 13.18 kDa  | pI: 6.54  | Ext.C: 2365 M⁻¹·cm⁻¹
 
@@ -52,7 +52,7 @@ Sequence:
 
 > NM_000477.7 | Strand: Forward | Pos: 280 - 462 bp
 ------------------------------------------------------------
-DNA     Length: 183 bp  | Mass: 56,450 Da | GC: 42.1% | Tm: 78.5 °C
+DNA     Length: 183 bp  | Mass: 56,450 Da | AT: 57.9% | GC: 42.1% | Tm: 78.5 °C
 RNA     Mass: 58,760 Da
 Protein Length: 60 aa  | Mass: 7.03 kDa  | pI: 9.92  | Ext.C: 12615 M⁻¹·cm⁻¹
 
@@ -64,7 +64,7 @@ Sequence:
 
 > NM_000477.7 | Strand: Reverse | Pos: 333 - 497 bp
 ------------------------------------------------------------
-DNA     Length: 165 bp  | Mass: 50,870 Da | GC: 44.8% | Tm: 79.2 °C
+DNA     Length: 165 bp  | Mass: 50,870 Da | AT: 55.2% | GC: 44.8% | Tm: 79.2 °C
 RNA     Mass: 52,808 Da
 Protein Length: 54 aa  | Mass: 6.13 kDa  | pI: 7.90  | Ext.C: 11375 M⁻¹·cm⁻¹
 
@@ -76,7 +76,7 @@ Sequence:
 
 > NM_000477.7 | Strand: Forward | Pos: 532 - 762 bp
 ------------------------------------------------------------
-DNA     Length: 231 bp  | Mass: 71,411 Da | GC: 45.0% | Tm: 80.4 °C
+DNA     Length: 231 bp  | Mass: 71,411 Da | AT: 55.0% | GC: 45.0% | Tm: 80.4 °C
 RNA     Mass: 74,264 Da
 Protein Length: 76 aa  | Mass: 8.55 kDa  | pI: 10.64  | Ext.C: 250 M⁻¹·cm⁻¹
 
@@ -88,7 +88,7 @@ Sequence:
 
 > NM_000477.7 | Strand: Reverse | Pos: 826 - 1170 bp
 ------------------------------------------------------------
-DNA     Length: 345 bp  | Mass: 106,151 Da | GC: 44.1% | Tm: 81.0 °C
+DNA     Length: 345 bp  | Mass: 106,151 Da | AT: 55.9% | GC: 44.1% | Tm: 81.0 °C
 RNA     Mass: 110,308 Da
 Protein Length: 114 aa  | Mass: 13.25 kDa  | pI: 8.67  | Ext.C: 27095 M⁻¹·cm⁻¹
 

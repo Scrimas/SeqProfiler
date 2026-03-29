@@ -4,7 +4,7 @@ SeqProfiler: ORF Analysis Report
 
 > NM_000207.3 | Strand: Forward | Pos: 60 - 392 bp
 ------------------------------------------------------------
-DNA     Length: 333 bp  | Mass: 102,884 Da | GC: 64.6% | Tm: 89.4 °C
+DNA     Length: 333 bp  | Mass: 102,884 Da | AT: 35.4% | GC: 64.6% | Tm: 89.4 °C
 RNA     Mass: 107,355 Da
 Protein Length: 110 aa  | Mass: 11.98 kDa  | pI: 5.04  | Ext.C: 17710 M⁻¹·cm⁻¹
 
@@ -17,7 +17,7 @@ Sequence:
 
 > NM_000207.3 | Strand: Reverse | Pos: 206 - 355 bp
 ------------------------------------------------------------
-DNA     Length: 150 bp  | Mass: 45,962 Da | GC: 67.3% | Tm: 88.0 °C
+DNA     Length: 150 bp  | Mass: 45,962 Da | AT: 32.7% | GC: 67.3% | Tm: 88.0 °C
 RNA     Mass: 47,968 Da
 Protein Length: 49 aa  | Mass: 5.26 kDa  | pI: 11.08  | Ext.C: 625 M⁻¹·cm⁻¹
 
@@ -28,7 +28,7 @@ Sequence:
 
 > NM_000518.5 | Strand: Forward | Pos: 51 - 494 bp
 ------------------------------------------------------------
-DNA     Length: 444 bp  | Mass: 137,500 Da | GC: 56.1% | Tm: 86.4 °C
+DNA     Length: 444 bp  | Mass: 137,500 Da | AT: 43.9% | GC: 56.1% | Tm: 86.4 °C
 RNA     Mass: 143,100 Da
 Protein Length: 147 aa  | Mass: 16.00 kDa  | pI: 6.87  | Ext.C: 15720 M⁻¹·cm⁻¹
 
