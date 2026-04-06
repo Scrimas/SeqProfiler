@@ -19,7 +19,7 @@ If you are reviewing this code, you might wonder why I manually hardcoded a 64-c
 - **Protein Analysis:** Direct support for analyzing protein sequences (e.g., from NCBI).
 - **Biochemical calculations:** Calculates key physical properties (Mass, GC percentage, Tm, pI and Extinction Coefficient).
 - **NCBI Integration:** Fetch and analyze DNA, RNA, or Protein sequences directly using NCBI accession IDs.
-- **Detailed Reports:** Generates structured reports for every ORF or Protein, maps coordinates and presents 1-letter protein sequences in a NCBI-style chunked blocks.
+- **Detailed Reports:** Generates structured reports for every ORF or Protein, maps coordinates and presents 1-letter protein sequences in a NCBI-style chunked blocks with position numbers.
 
 ## Calculations accuracy (SeqProfiler vs. Biopython)
 
@@ -50,11 +50,6 @@ pip install requests
 python src/main.py
 ```
 
-```bash
-# Specifying custom settings
-python src/main.py --min-length 100 --workers 4 --input ./data_folder --output ./results_folder --start-codons ATG
-```
-
 ### Available Options
 
 | Argument | Description | Default |
@@ -83,10 +78,10 @@ python src/main.py --input ./data --ncbi NM_001301717
 
 While the test results are already included on this repository (see [tests/pytest_results.txt](https://github.com/Scrimas/SeqProfiler/blob/main/tests/pytest_results.txt)), you can verify the algorithms on your own machine. 
 
-For this, simply install `pytest`, `biopython` and `requests`, then run the test suite from the root directory:
+For this, simply install `pytest` and `biopython`, then run the test suite from the root directory:
 
 ```bash
-pip install pytest biopython requests
+pip install pytest biopython
 pytest -v
 ```
 
